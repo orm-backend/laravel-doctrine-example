@@ -27,7 +27,10 @@ class ImageControllerTest extends TestCase
     public function testCreate()
     {
         $faker = \Faker\Factory::create();
+        $disk = config('filesystems.default');
+        $rootPath = config("filesystems.disks.{$disk}.root");
         $file = UploadedFile::fake()->image($faker->word . '.jpg');
+
         $data = [
             'image' => $file,
             'name' => $faker->word . '.jpeg',
@@ -40,7 +43,7 @@ class ImageControllerTest extends TestCase
         
         $response = $this->json('POST', '/api/entities/app-model-image/create', $data);
         $response->assertStatus(201);
-        Storage::disk(config('filesystems.default', 'local'))->assertExists('images/originals/' . $file->hashName());
+        Storage::disk()->assertExists(config('itaces.upload.img') . '/' . $file->hashName());
         
         return $response->json('id');
     }

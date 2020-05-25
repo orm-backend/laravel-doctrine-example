@@ -18,6 +18,7 @@ class City extends \App\Entities\City implements SoftDeleteable, UnderAdminContr
         return [
             'name' => ['required', 'string', 'max:255'],
             'urlRoute' => ['nullable', 'string', 'max:255', 'unique:App\Model\City,urlRoute,'.$this->id],
+            'regionalCenter' => ['required', 'boolean'],
             'displayOrder' => ['nullable', 'integer', 'min:1'],
             'seoKeywords' => ['nullable', 'string', 'min:1', 'max:4000'],
             'seoTitle' => ['nullable', 'string', 'min:1', 'max:1000'],

@@ -2,10 +2,32 @@
 
 namespace Tests\Feature;
 
+use App\Model\Event;
+use App\Model\Image;
 use Tests\TestCase;
+use ItAces\Repositories\Repository;
 
 class EventTileControllerTest extends TestCase
 {
+    
+    protected $repository;
+    
+    protected function setUp(): void
+    {
+        if (! $this->app) {
+            $this->refreshApplication();
+        }
+        
+        $this->setUpTraits();
+        
+        foreach ($this->afterApplicationCreatedCallbacks as $callback) {
+            $callback();
+        }
+        
+        $this->repository = new Repository;
+        
+        $this->setUpHasRun = true;
+    }
     
     public function testIndex()
     {
@@ -25,9 +47,12 @@ class EventTileControllerTest extends TestCase
     {
         $faker = \Faker\Factory::create();
         $displayOrder = $faker->optional()->numberBetween(1,100);
+        $event = $this->repository->random(Event::class)->getSingleResult();
+        $image = $this->repository->random(Image::class)->getSingleResult();
+        
         $data = [
-            'event' => $faker->numberBetween(1,100),
-            'image' => $faker->optional()->numberBetween(1,100),
+            'event' => $event->getId(),
+            'image' => $faker->boolean ? $image->getId() : null,
             'name' => $faker->sentence(),
             'content' => $faker->optional()->text,
             'displayOrder' => $displayOrder ? $displayOrder : 100,

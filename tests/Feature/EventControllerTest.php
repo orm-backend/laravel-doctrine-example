@@ -2,11 +2,32 @@
 
 namespace Tests\Feature;
 
+use App\Model\Image;
 use Illuminate\Support\Str;
 use Tests\TestCase;
+use ItAces\Repositories\Repository;
 
 class EventControllerTest extends TestCase
 {
+    
+    protected $repository;
+    
+    protected function setUp(): void
+    {
+        if (! $this->app) {
+            $this->refreshApplication();
+        }
+        
+        $this->setUpTraits();
+        
+        foreach ($this->afterApplicationCreatedCallbacks as $callback) {
+            $callback();
+        }
+        
+        $this->repository = new Repository;
+        
+        $this->setUpHasRun = true;
+    }
     
     public function testIndex()
     {
@@ -25,9 +46,10 @@ class EventControllerTest extends TestCase
     public function testCreate()
     {
         $faker = \Faker\Factory::create();
+        $image = $this->repository->random(Image::class)->getSingleResult();
 
         $data = [
-            'image' => $faker->optional()->numberBetween(1,100),
+            'image' => $faker->boolean ? $image->getId() : null,
             'name' => $faker->sentence(),
             'urlRoute' => Str::random(),
             'startDate' => $faker->dateTimeBetween('now', '+7 days')->getTimestamp(),
