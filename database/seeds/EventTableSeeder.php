@@ -5,10 +5,17 @@ use App\Model\Image;
 use App\Model\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use ItAces\Repositories\Repository;
 
 class EventTableSeeder extends Seeder
 {
 
+    private $repository;
+    
+    public function __construct(Repository $repository) {
+        $this->repository = $repository;
+    }
+    
     /**
      * Run the database seeds.
      *
@@ -26,7 +33,6 @@ class EventTableSeeder extends Seeder
         
         for ($i = 0; $i < 100; $i++) {
             $endDate = $faker->optional()->dateTimeBetween('now', '+7 days');
-            $imageId = $faker->optional()->numberBetween(1,100);
 
             $event = new Event;
             $event->setName($faker->word);
@@ -41,8 +47,9 @@ class EventTableSeeder extends Seeder
             $event->setSeoDescription($faker->paragraph);
             $event->setCreatedBy($user);
             
-            if ($imageId) {
-                $event->setImage( $em->getRepository(Image::class)->find($imageId));
+            if ($faker->boolean) {
+                $image = $this->repository->random(Image::class)->getSingleResult();
+                $event->setImage($image);
             }
             
             $em->persist($event);

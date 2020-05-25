@@ -1,7 +1,5 @@
 # Example integration with Admin Panel developed by [IT Aces](https://it-aces.com/) team
 
-![Screenshot](Screenshot.png)
-
 ## Dependencies
 
  * [laravel](https://github.com/laravel)
@@ -117,6 +115,10 @@ php artisan storage:link
 mkdir storage/app/public/images
 php artisan db:seed
 ```
+
+ * Go to the admin panel and set full permissions for the role with the code "visitor"
+ 
+ ![Screenshot](Screenshot.png)
 
  * Running tests
  
