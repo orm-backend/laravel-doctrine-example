@@ -15,10 +15,10 @@
 
 ## Install
 
- * Create Laravel project
+ * Checkout
 
 ```BASH
-laravel new laravel-doctrine-example
+git clone git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-example.git
 ```
 
  * Add repositories to composer.json
@@ -51,11 +51,11 @@ laravel new laravel-doctrine-example
  * Install packages
 
 ```BASH
-composer require it-aces/laravel-doctrine-example
+composer install
 ```
 
 ```BASH
-npm install cross-env css-loader jquery popper.js bootstrap
+npm install
 ```
 
 ## Setting up
@@ -83,7 +83,7 @@ php artisan doctrine:schema:update
  
 Checking if database connected to default entity manager needs updating...
 Updating database schema...
-Database schema updated successfully! "11" query was executed
+Database schema updated successfully! "53" queries were executed
 ```
 
  * Creation of roles and administrator with login _admin@it-aces.com_ and password _doctrine_
@@ -96,10 +96,16 @@ php artisan db:seed --class="ItAces\Database\Seeds\UserTableSeeder"
 Database seeding completed successfully.
 ```
 
- * .env
+ * Set up your DB connection, APP_URL and add the following lines to .env
  
 ```PHP
 FILESYSTEM_DRIVER=public
+
+DOCTRINE_PROXY_AUTOGENERATE=1
+DOCTRINE_CACHE=file
+DOCTRINE_RESULT_CACHE=array
+DOCTRINE_SECOND_CACHE_TTL=3600
+DOCTRINE_RESULT_CACHE_TTL=120
 ```
 
 ## Testing
@@ -108,6 +114,7 @@ FILESYSTEM_DRIVER=public
  
 ```BASH
 php artisan storage:link
+mkdir storage/app/public/images
 php artisan db:seed
 ```
 
@@ -117,4 +124,12 @@ php artisan db:seed
  php artisan test
  ```
  
+## Next
 
+To create an application from scratch or add an admin panel to an existing project, you do not need this package. Please install separately:
+
+ * [it-aces/laravel-doctrine](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine/src/master/)
+ * [it-aces/laravel-doctrine-acl](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-acl/src/master/)
+ * [it-aces/laravel-doctrine-web](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-web/src/master/)
+ * [it-aces/laravel-doctrine-admin](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-admin/src/master/)
+ 
