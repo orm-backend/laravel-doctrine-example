@@ -5,9 +5,16 @@ use App\Model\EventTile;
 use App\Model\Image;
 use App\Model\User;
 use Illuminate\Database\Seeder;
+use ItAces\Repositories\Repository;
 
 class EventTileTableSeeder extends Seeder
 {
+    private $repository;
+    
+    public function __construct(Repository $repository) {
+        $this->repository = $repository;
+    }
+    
     /**
      * Run the database seeds.
      *
@@ -25,8 +32,7 @@ class EventTileTableSeeder extends Seeder
         
         for ($i = 0; $i < 100; $i++) {
             $displayOrder = $faker->optional()->numberBetween(1,100);
-            $imageId = $faker->optional()->numberBetween(1,100);
-            $event = $em->getRepository(Event::class)->find( $faker->numberBetween(1,100) );
+            $event = $this->repository->random(Event::class)->getSingleResult();
             
             $tile = new EventTile;
             $tile->setName($faker->sentence());
@@ -38,8 +44,9 @@ class EventTileTableSeeder extends Seeder
             $tile->setEvent($event);
             $tile->setCreatedBy($user);
             
-            if ($imageId) {
-                $tile->setImage($em->getRepository(Image::class)->find( $imageId ));
+            if ($faker->boolean) {
+                $image = $this->repository->random(Image::class)->getSingleResult();
+                $tile->setImage($image);
             }
             
             $em->persist($tile);

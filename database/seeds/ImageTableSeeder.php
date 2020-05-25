@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Seeder;
-use ItAces\Repositories\Repository;
 use App\Model\Image;
 use App\Model\User;
+use Illuminate\Database\Seeder;
+use ItAces\Repositories\Repository;
 
 class ImageTableSeeder extends Seeder
 {
@@ -23,19 +23,25 @@ class ImageTableSeeder extends Seeder
     {
         $user = $this->repository->findOrFail(User::class, 1);
         $faker = \Faker\Factory::create();
+        $disk = config('filesystems.default');
+        $rootPath = config("filesystems.disks.{$disk}.root");
         
         for ($i = 0; $i < 100; $i++) {
-            $data = [
-                'createdBy' => $user,
-                'name' => $faker->word . '.jpeg',
-                'urlRoute' => $faker->unique()->word,
-                'altText' => $faker->sentence(),
-                'path' => 'images/originals/' . $faker->md5 . '.jpeg',
-                'description' => $faker->optional()->paragraph(),
-                'photoCredit' => $faker->optional()->text
-            ];
-            
-            $this->repository->createOrUpdate(Image::class, $data);
+            $image = $faker->image($rootPath . '/' . config('itaces.upload.img'), 640, 480, null, false);
+
+            if ($image) {
+                $data = [
+                    'createdBy' => $user,
+                    'name' => $image,
+                    'urlRoute' => $faker->unique()->word,
+                    'altText' => $faker->sentence(),
+                    'path' => config('itaces.upload.img') . '/' . $image,
+                    'description' => $faker->optional()->paragraph(),
+                    'photoCredit' => $faker->optional()->text
+                ];
+                
+                $this->repository->createOrUpdate(Image::class, $data);
+            }
         }
         
         $this->repository->em()->flush();

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f16505b40397fd4ad22faf672243a573",
+    "content-hash": "a9b3ee595d8d52aebba23af0682f3506",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -57,6 +57,60 @@
                 "stack"
             ],
             "time": "2019-12-24T22:41:47+00:00"
+        },
+        {
+            "name": "beberlei/doctrineextensions",
+            "version": "v1.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beberlei/DoctrineExtensions.git",
+                "reference": "af72c4a136b744f1268ca8bb4da47a2f8af78f86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beberlei/DoctrineExtensions/zipball/af72c4a136b744f1268ca8bb4da47a2f8af78f86",
+                "reference": "af72c4a136b744f1268ca8bb4da47a2f8af78f86",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "^2.6",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.14",
+                "nesbot/carbon": "*",
+                "phpunit/phpunit": "^7.0 || ^8.0",
+                "symfony/yaml": "^4.2",
+                "zf1/zend-date": "^1.12",
+                "zf1/zend-registry": "^1.12"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DoctrineExtensions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Steve Lacey",
+                    "email": "steve@stevelacey.net"
+                }
+            ],
+            "description": "A set of extensions to Doctrine 2 that add support for additional query functions available in MySQL and Oracle.",
+            "keywords": [
+                "database",
+                "doctrine",
+                "orm"
+            ],
+            "time": "2019-12-05T09:49:04+00:00"
         },
         {
             "name": "brick/math",
@@ -1591,10 +1645,10 @@
         {
             "name": "it-aces/laravel-doctrine",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine.git",
-                "reference": "12288b44470da8e055c1ad4f49e7721f6f2edb81"
+            "dist": {
+                "type": "path",
+                "url": "../laravel-doctrine",
+                "reference": "12cdaaf47fccd903688c42a12cca652ec3a82b59"
             },
             "require": {
                 "laravel-doctrine/extensions": "^1.1",
@@ -1635,16 +1689,15 @@
                 "it-aces",
                 "laravel",
                 "laravel-doctrine"
-            ],
-            "time": "2020-05-24T13:32:22+00:00"
+            ]
         },
         {
             "name": "it-aces/laravel-doctrine-acl",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-acl.git",
-                "reference": "46a9a93123c33b3e06cd8c23ad88b329c51fbd9a"
+            "dist": {
+                "type": "path",
+                "url": "../laravel-doctrine-acl",
+                "reference": "a49c0d02cbd4e1f61618975466d0d438e0072a88"
             },
             "require": {
                 "it-aces/laravel-doctrine": "dev-master"
@@ -1676,19 +1729,19 @@
                 "acl",
                 "it-aces",
                 "laravel-doctrine"
-            ],
-            "time": "2020-05-23T20:21:58+00:00"
+            ]
         },
         {
             "name": "it-aces/laravel-doctrine-admin",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-admin.git",
-                "reference": "ee8df96974bb522e4dd767055ce0a715eb3673b2"
+            "dist": {
+                "type": "path",
+                "url": "../laravel-doctrine-admin",
+                "reference": "ce318244dce3eec3ce0ea5fb70e7707a47be02be"
             },
             "require": {
-                "it-aces/laravel-doctrine-acl": "dev-master"
+                "it-aces/laravel-doctrine-acl": "dev-master",
+                "laravel/ui": "^2.0"
             },
             "type": "library",
             "extra": {
@@ -1718,16 +1771,15 @@
                 "it-aces",
                 "laravel admin",
                 "laravel-doctrine-admin"
-            ],
-            "time": "2020-05-24T13:33:10+00:00"
+            ]
         },
         {
             "name": "it-aces/laravel-doctrine-web",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-web.git",
-                "reference": "7ed40d4d630c92d7461662f84ebf7a65efd20c7e"
+            "dist": {
+                "type": "path",
+                "url": "../laravel-doctrine-web",
+                "reference": "0efeed697620a3e2bd02aa6adce20e9855f2c8e1"
             },
             "require": {
                 "it-aces/laravel-doctrine": "dev-master",
@@ -1761,8 +1813,7 @@
                 "it-aces",
                 "laravel",
                 "laravel-doctrine-web"
-            ],
-            "time": "2020-05-24T13:31:54+00:00"
+            ]
         },
         {
             "name": "laminas/laminas-diactoros",

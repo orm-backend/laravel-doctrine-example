@@ -3,9 +3,9 @@
 return [
     
     'upload' => [
-        'img' => 'upload/img',
-        'doc' => 'upload/doc',
-        'cache' => 'img'
+        'img' => 'images',
+        'doc' => 'doc',
+        'cache' => 'cache'
     ],
     
     'caches' => [

@@ -28,7 +28,7 @@ return [
             'namespaces'    => [],
             'paths'         => [
                 base_path('app/Model') => 'App\Model',
-                //base_path('app/Entities') => 'App\Entities',
+                base_path('app/Entities') => 'App\Entities',
             ],
             'repository'    => Doctrine\ORM\EntityRepository::class,
             'proxies'       => [
@@ -98,7 +98,7 @@ return [
         //LaravelDoctrine\Extensions\Loggable\LoggableExtension::class,
         //LaravelDoctrine\Extensions\Blameable\BlameableExtension::class,
         //LaravelDoctrine\Extensions\IpTraceable\IpTraceableExtension::class,
-        //LaravelDoctrine\Extensions\Translatable\TranslatableExtension::class
+        //LaravelDoctrine\Extensions\Translatable\TranslatableExtension::class,
     ],
     /*
     |--------------------------------------------------------------------------
@@ -123,7 +123,10 @@ return [
     | DQL custom numeric functions
     |--------------------------------------------------------------------------
     */
-    'custom_numeric_functions'   => [],
+    'custom_numeric_functions'   => [
+        'CEIL' => DoctrineExtensions\Query\Mysql\Ceil::class,
+        'RAND' => DoctrineExtensions\Query\Mysql\Rand::class,
+    ],
     /*
     |--------------------------------------------------------------------------
     | DQL custom string functions

@@ -31,9 +31,8 @@ class CityTableSeeder extends Seeder
         $user = $em->getRepository(User::class)->find( 1 );
         
         for ($i = 0; $i < 100; $i++) {
+            $event = $this->repository->random(Event::class)->getSingleResult();
             $displayOrder = $faker->optional()->numberBetween(1,100);
-            $imageId = $faker->optional()->numberBetween(1,100);
-            $event = $em->getRepository(Event::class)->find( $faker->numberBetween(1,100) );
             
             $city = new City;
             $city->setName($faker->sentence());
@@ -46,8 +45,9 @@ class CityTableSeeder extends Seeder
             $city->setDisplayOrder($displayOrder ? $displayOrder : 100);
             $city->setCreatedBy($user);
             
-            if ($imageId) {
-                $city->setImage($em->getRepository(Image::class)->find( $imageId ));
+            if ($faker->boolean) {
+                $image = $this->repository->random(Image::class)->getSingleResult();
+                $city->setImage($image);
             }
             
             $em->persist($city);
