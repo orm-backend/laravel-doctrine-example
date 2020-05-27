@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07dcde7a8e36a6efa9655be822681c3e",
+    "content-hash": "4c934cf023b0a4c08107139db9c36c5f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1647,7 +1647,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-doctrine",
-                "reference": "fd22a13c69443a1feb4f392ae31c501bfd54c0f6"
+                "reference": "b7b669abfb68d1ef2e611cf5e5cb224c10f52b33"
             },
             "require": {
                 "beberlei/doctrineextensions": "^1.2",
@@ -6040,6 +6040,65 @@
                 "test"
             ],
             "time": "2016-01-20T08:20:44+00:00"
+        },
+        {
+            "name": "itsgoingd/clockwork",
+            "version": "v4.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itsgoingd/clockwork.git",
+                "reference": "5da03673010a227f400e30debf622954920ecd5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/itsgoingd/clockwork/zipball/5da03673010a227f400e30debf622954920ecd5d",
+                "reference": "5da03673010a227f400e30debf622954920ecd5d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.5",
+                "psr/log": "1.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Clockwork\\Support\\Laravel\\ClockworkServiceProvider"
+                    ],
+                    "aliases": {
+                        "Clockwork": "Clockwork\\Support\\Laravel\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Clockwork\\": "Clockwork/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "itsgoingd",
+                    "email": "itsgoingd@luzer.sk",
+                    "homepage": "https://twitter.com/itsgoingd"
+                }
+            ],
+            "description": "php dev tools integrated to your browser",
+            "homepage": "https://underground.works/clockwork",
+            "keywords": [
+                "Devtools",
+                "debugging",
+                "laravel",
+                "logging",
+                "lumen",
+                "profiling",
+                "slim"
+            ],
+            "time": "2020-05-24T23:30:22+00:00"
         },
         {
             "name": "maximebf/debugbar",
