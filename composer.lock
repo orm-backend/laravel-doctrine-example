@@ -1737,7 +1737,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-doctrine-admin",
-                "reference": "9aa14169882b5c67b5d504fa9389fc16c7c9075c"
+                "reference": "51f9625073e391648fe545c994ff5e2f685e583a"
             },
             "require": {
                 "it-aces/laravel-doctrine-acl": "dev-master",
