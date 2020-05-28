@@ -17,6 +17,7 @@ implements Authenticatable, Authorizable, CanResetPassword, MustVerifyEmail, Sof
     use \ItAces\Traits\Notifiable;
     use \ItAces\Traits\MustVerifyEmail;
     use \ItAces\Traits\Authenticatable;
+    use \Laravel\Passport\HasApiTokens;
     
     /**
      * Fields to be excluded from the JSON response.

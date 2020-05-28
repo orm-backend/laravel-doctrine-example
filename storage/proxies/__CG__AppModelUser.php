@@ -85,10 +85,10 @@ class User extends \App\Model\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'email', 'emailVerifiedAt', 'password', 'rememberToken', 'roles', 'id', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy'];
+            return ['__isInitialized__', 'email', 'emailVerifiedAt', 'password', 'rememberToken', 'roles', 'id', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy', 'accessToken'];
         }
 
-        return ['__isInitialized__', 'email', 'emailVerifiedAt', 'password', 'rememberToken', 'roles', 'id', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy'];
+        return ['__isInitialized__', 'email', 'emailVerifiedAt', 'password', 'rememberToken', 'roles', 'id', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy', 'accessToken'];
     }
 
     /**
@@ -772,6 +772,73 @@ class User extends \App\Model\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAuthPassword', []);
 
         return parent::getAuthPassword();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function clients()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'clients', []);
+
+        return parent::clients();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function tokens()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'tokens', []);
+
+        return parent::tokens();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function token()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'token', []);
+
+        return parent::token();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function tokenCan($scope)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'tokenCan', [$scope]);
+
+        return parent::tokenCan($scope);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function createToken($name, array $scopes = array (
+))
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'createToken', [$name, $scopes]);
+
+        return parent::createToken($name, $scopes);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function withAccessToken($accessToken)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'withAccessToken', [$accessToken]);
+
+        return parent::withAccessToken($accessToken);
     }
 
 }
