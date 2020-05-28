@@ -15,6 +15,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "it-aces/laravel-doctrine": "dev-master",
         "it-aces/laravel-doctrine-acl": "dev-master",
+        "it-aces/laravel-doctrine-oauth": "dev-master",
         "it-aces/laravel-doctrine-admin": "dev-master",
         "it-aces/laravel-doctrine-web": "dev-master",
         "laravel/framework": "^7.0",
@@ -22,7 +23,6 @@
         "laravel/ui": "^2.0"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.3",
         "facade/ignition": "^2.0",
         "fzaninotto/faker": "^1.9.1",
         "itsgoingd/clockwork": "^4.1",
@@ -76,6 +76,10 @@
         {
            "type": "path",
            "url": "../laravel-doctrine-acl/"
+        },
+        {
+           "type": "path",
+           "url": "../laravel-doctrine-oauth/"
         },
         {
            "type": "path",
