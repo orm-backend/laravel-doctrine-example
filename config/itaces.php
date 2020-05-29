@@ -17,7 +17,7 @@ return [
         App\Model\Image::class => ItAces\Adapters\ImageAdapter::class,
     ],
     
-    'acl' => ItAces\ACL\DefaultImplementation::class,
+    'acl' => ItAces\ACL\ManagedImplementation::class,
     
     'roles' => [
         'default' => 'registered',
