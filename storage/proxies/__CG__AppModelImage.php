@@ -354,14 +354,21 @@ class Image extends \App\Model\Image implements \Doctrine\ORM\Proxy\Proxy
      */
     public function getId()
     {
-        if ($this->__isInitialized__ === false) {
-            return (int)  parent::getId();
-        }
-
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
 
         return parent::getId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPrimary()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPrimary', []);
+
+        return parent::getPrimary();
     }
 
     /**

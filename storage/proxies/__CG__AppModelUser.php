@@ -85,10 +85,10 @@ class User extends \App\Model\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'email', 'emailVerifiedAt', 'password', 'rememberToken', 'roles', 'id', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy', 'accessToken'];
+            return ['__isInitialized__', 'id', 'email', 'emailVerifiedAt', 'password', 'rememberToken', 'roles', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy', 'accessToken'];
         }
 
-        return ['__isInitialized__', 'email', 'emailVerifiedAt', 'password', 'rememberToken', 'roles', 'id', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy', 'accessToken'];
+        return ['__isInitialized__', 'id', 'email', 'emailVerifiedAt', 'password', 'rememberToken', 'roles', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy', 'accessToken'];
     }
 
     /**
@@ -343,14 +343,21 @@ class User extends \App\Model\User implements \Doctrine\ORM\Proxy\Proxy
      */
     public function getId()
     {
-        if ($this->__isInitialized__ === false) {
-            return (int)  parent::getId();
-        }
-
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
 
         return parent::getId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPrimary()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPrimary', []);
+
+        return parent::getPrimary();
     }
 
     /**
@@ -772,6 +779,17 @@ class User extends \App\Model\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAuthPassword', []);
 
         return parent::getAuthPassword();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function findForPassport($userIdentifier)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'findForPassport', [$userIdentifier]);
+
+        return parent::findForPassport($userIdentifier);
     }
 
     /**

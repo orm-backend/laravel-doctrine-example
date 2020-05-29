@@ -1,68 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <mapped-superclass name="App\Entities\EventTile">
-    <indexes>
-      <index name="event_tile_deleted_by_index" columns="deleted_by"/>
-      <index name="event_tile_image_id_index" columns="image_id"/>
-      <index name="event_tile_display_order_index" columns="display_order"/>
-      <index name="event_tile_updated_at_index" columns="updated_at"/>
-      <index name="event_tile_created_by_index" columns="created_by"/>
-      <index name="event_tile_event_id_index" columns="event_id"/>
-      <index name="event_tile_name_index" columns="name"/>
-      <index name="event_tile_created_at_index" columns="created_at"/>
-      <index name="event_tile_deleted_at_index" columns="deleted_at"/>
-      <index name="event_tile_updated_by_index" columns="updated_by"/>
-    </indexes>
-    <field name="name" type="string" column="name" length="255" nullable="false">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="content" type="string" column="content" length="4000" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="displayOrder" type="integer" column="display_order" nullable="false">
-      <options>
-        <option name="unsigned">1</option>
-        <option name="default">100</option>
-      </options>
-    </field>
-    <field name="seoKeywords" type="string" column="seo_keywords" length="4000" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="seoTitle" type="string" column="seo_title" length="1000" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="seoDescription" type="string" column="seo_description" length="4000" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <many-to-one field="event" target-entity="App\Model\Event" fetch="LAZY">
-      <cache usage="NONSTRICT_READ_WRITE"/>
-      <cascade>
-		<cascade-persist/>
-		<cascade-merge/>
-		<cascade-refresh/>
-      </cascade>
-      <join-columns>
-        <join-column name="event_id" referenced-column-name="id" nullable="false" on-delete="CASCADE"/>
-      </join-columns>
-    </many-to-one>
-    <many-to-one field="image" target-entity="App\Model\Image" fetch="LAZY">
-      <cache usage="NONSTRICT_READ_WRITE"/>
-      <cascade>
-		<cascade-all/>
-      </cascade>
-      <join-columns>
-        <join-column name="image_id" referenced-column-name="id" on-delete="SET NULL"/>
-      </join-columns>
-    </many-to-one>
-  </mapped-superclass>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<mapped-superclass name="App\Entities\EventTile">
+		<indexes>
+			<index name="event_tile_deleted_by_index" columns="deleted_by" />
+			<index name="event_tile_image_id_index" columns="image_id" />
+			<index name="event_tile_display_order_index" columns="display_order" />
+			<index name="event_tile_updated_at_index" columns="updated_at" />
+			<index name="event_tile_created_by_index" columns="created_by" />
+			<index name="event_tile_event_id_index" columns="event_id" />
+			<index name="event_tile_name_index" columns="name" />
+			<index name="event_tile_created_at_index" columns="created_at" />
+			<index name="event_tile_deleted_at_index" columns="deleted_at" />
+			<index name="event_tile_updated_by_index" columns="updated_by" />
+		</indexes>
+		<id name="id" type="integer" column="id">
+			<options>
+				<option name="unsigned">1</option>
+			</options>
+			<generator strategy="IDENTITY" />
+		</id>
+		<field name="name" type="string" column="name" length="255" nullable="false">
+			<options>
+				<option name="fixed" />
+			</options>
+		</field>
+		<field name="content" type="string" column="content" length="4000" nullable="true">
+			<options>
+				<option name="fixed" />
+			</options>
+		</field>
+		<field name="displayOrder" type="integer" column="display_order" nullable="false">
+			<options>
+				<option name="unsigned">1</option>
+				<option name="default">100</option>
+			</options>
+		</field>
+		<field name="seoKeywords" type="string" column="seo_keywords" length="4000" nullable="true">
+			<options>
+				<option name="fixed" />
+			</options>
+		</field>
+		<field name="seoTitle" type="string" column="seo_title" length="1000" nullable="true">
+			<options>
+				<option name="fixed" />
+			</options>
+		</field>
+		<field name="seoDescription" type="string" column="seo_description" length="4000" nullable="true">
+			<options>
+				<option name="fixed" />
+			</options>
+		</field>
+		<many-to-one field="event" target-entity="App\Model\Event" fetch="LAZY">
+			<cache usage="NONSTRICT_READ_WRITE" />
+			<cascade>
+				<cascade-persist />
+				<cascade-merge />
+				<cascade-refresh />
+			</cascade>
+			<join-columns>
+				<join-column name="event_id" referenced-column-name="id" nullable="false" on-delete="CASCADE" />
+			</join-columns>
+		</many-to-one>
+		<many-to-one field="image" target-entity="App\Model\Image" fetch="LAZY">
+			<cache usage="NONSTRICT_READ_WRITE" />
+			<cascade>
+				<cascade-all />
+			</cascade>
+			<join-columns>
+				<join-column name="image_id" referenced-column-name="id" on-delete="SET NULL" />
+			</join-columns>
+		</many-to-one>
+	</mapped-superclass>
 </doctrine-mapping>
