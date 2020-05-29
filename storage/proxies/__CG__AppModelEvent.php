@@ -85,10 +85,10 @@ class Event extends \App\Model\Event implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'name', 'urlRoute', 'startDate', 'endDate', 'location', 'content', 'status', 'seoKeywords', 'seoTitle', 'seoDescription', 'image', 'id', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy'];
+            return ['__isInitialized__', 'id', 'name', 'urlRoute', 'startDate', 'endDate', 'location', 'content', 'status', 'seoKeywords', 'seoTitle', 'seoDescription', 'image', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy'];
         }
 
-        return ['__isInitialized__', 'name', 'urlRoute', 'startDate', 'endDate', 'location', 'content', 'status', 'seoKeywords', 'seoTitle', 'seoDescription', 'image', 'id', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy'];
+        return ['__isInitialized__', 'id', 'name', 'urlRoute', 'startDate', 'endDate', 'location', 'content', 'status', 'seoKeywords', 'seoTitle', 'seoDescription', 'image', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy'];
     }
 
     /**

@@ -85,10 +85,10 @@ class Image extends \App\Model\Image implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'name', 'urlRoute', 'path', 'description', 'altText', 'photoCredit', 'id', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy'];
+            return ['__isInitialized__', 'id', 'name', 'urlRoute', 'path', 'description', 'altText', 'photoCredit', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy'];
         }
 
-        return ['__isInitialized__', 'name', 'urlRoute', 'path', 'description', 'altText', 'photoCredit', 'id', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy'];
+        return ['__isInitialized__', 'id', 'name', 'urlRoute', 'path', 'description', 'altText', 'photoCredit', 'createdAt', 'updatedAt', 'deletedAt', 'createdBy', 'deletedBy', 'updatedBy'];
     }
 
     /**
