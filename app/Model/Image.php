@@ -9,6 +9,14 @@ use ItAces\Types\ImageType;
 
 class Image extends \App\Entities\Image implements SoftDeleteable, ImageType
 {
+    
+    /**
+     * Methods to be included to the api response.
+     *
+     * @var string[]
+     */
+    public static $additional = ['url'];
+    
     /**
      *
      * {@inheritDoc}
