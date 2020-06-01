@@ -7,6 +7,7 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use ItAces\Web\Events\BeforMenu;
 use ItAces\Admin\AdminMenuListener;
+use ItAces\Oauth\OauthMenuListener;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -22,6 +23,7 @@ class EventServiceProvider extends ServiceProvider
         
         BeforMenu::class => [
             AdminMenuListener::class,
+            OauthMenuListener::class,
         ],
     ];
 

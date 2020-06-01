@@ -3,10 +3,10 @@
 namespace App\Model;
 
 use ItAces\SoftDeleteable;
-use ItAces\UnderAdminControl;
+use ItAces\Publishable;
 
 
-class Event extends \App\Entities\Event implements SoftDeleteable, UnderAdminControl
+class Event extends \App\Entities\Event implements SoftDeleteable, Publishable
 {
 
     /**

@@ -3,10 +3,10 @@
 namespace App\Model;
 
 use ItAces\SoftDeleteable;
-use ItAces\UnderAdminControl;
+use ItAces\Publishable;
 
 
-class City extends \App\Entities\City implements SoftDeleteable, UnderAdminControl
+class City extends \App\Entities\City implements SoftDeleteable, Publishable
 {
     /**
      *
