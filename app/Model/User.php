@@ -67,4 +67,11 @@ implements Authenticatable, Authorizable, CanResetPassword, MustVerifyEmail, Sof
         });
     }
 
+    /**
+     * 
+     * @return string
+     */
+    public function getName() {
+        return $this->email;
+    }
 }
