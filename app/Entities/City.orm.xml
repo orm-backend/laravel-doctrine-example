@@ -1,95 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <mapped-superclass name="App\Entities\City">
-    <indexes>
-      <index name="city_updated_by_index" columns="updated_by"/>
-      <index name="city_event_id_index" columns="event_id"/>
-      <index name="city_name_index" columns="name"/>
-      <index name="city_regional_center_index" columns="regional_center"/>
-      <index name="city_created_at_index" columns="created_at"/>
-      <index name="city_deleted_at_index" columns="deleted_at"/>
-      <index name="city_deleted_by_index" columns="deleted_by"/>
-      <index name="city_image_id_index" columns="image_id"/>
-      <index name="city_display_order_index" columns="display_order"/>
-      <index name="city_updated_at_index" columns="updated_at"/>
-      <index name="city_created_by_index" columns="created_by"/>
-    </indexes>
-    <unique-constraints>
-      <unique-constraint name="city_url_route_unique" columns="url_route"/>
-    </unique-constraints>
-    <field name="name" type="string" column="name" length="255" nullable="false">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="urlRoute" type="string" column="url_route" length="255" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="regionalCenter" type="boolean" column="regional_center" nullable="false">
-      <options>
-        <option name="fixed"/>
-        <option name="default">0</option>
-      </options>
-    </field>
-    <field name="displayOrder" type="integer" column="display_order" nullable="false">
-      <options>
-        <option name="unsigned">1</option>
-        <option name="default">100</option>
-      </options>
-    </field>
-    <field name="seoKeywords" type="string" column="seo_keywords" length="4000" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="seoTitle" type="string" column="seo_title" length="1000" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="seoDescription" type="string" column="seo_description" length="4000" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <many-to-one field="event" target-entity="App\Model\Event" fetch="LAZY">
-      <cache usage="NONSTRICT_READ_WRITE"/>
-      <cascade>
-		<cascade-persist/>
-		<cascade-merge/>
-		<cascade-refresh/>
-      </cascade>
-      <join-columns>
-        <join-column name="event_id" referenced-column-name="id" nullable="false"/>
-      </join-columns>
-    </many-to-one>
-    <many-to-one field="image" target-entity="App\Model\Image" fetch="LAZY">
-      <cache usage="NONSTRICT_READ_WRITE"/>
-      <cascade>
-		<cascade-all/>
-      </cascade>
-      <join-columns>
-        <join-column name="image_id" referenced-column-name="id" on-delete="SET NULL"/>
-      </join-columns>
-    </many-to-one>
-    <many-to-many field="images" target-entity="App\Model\Image" fetch="LAZY">
-      <cache usage="NONSTRICT_READ_WRITE"/>
-      <cascade>
-		<cascade-all/>
-      </cascade>
-      <join-table name="d_city_image">
-        <join-columns>
-          <join-column name="city_id" referenced-column-name="id" on-delete="CASCADE"/>
-        </join-columns>
-        <inverse-join-columns>
-          <join-column name="image_id" referenced-column-name="id" on-delete="CASCADE"/>
-        </inverse-join-columns>
-      </join-table>
-      <order-by>
-        <order-by-field name="name" direction="ASC"/>
-      </order-by>
-    </many-to-many>
-  </mapped-superclass>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+	<mapped-superclass name="App\Entities\City">
+		<indexes>
+			<index name="city_updated_by_index" columns="updated_by" />
+			<index name="city_event_id_index" columns="event_id" />
+			<index name="city_name_index" columns="name" />
+			<index name="city_regional_center_index" columns="regional_center" />
+			<index name="city_created_at_index" columns="created_at" />
+			<index name="city_deleted_at_index" columns="deleted_at" />
+			<index name="city_deleted_by_index" columns="deleted_by" />
+			<index name="city_image_id_index" columns="image_id" />
+			<index name="city_display_order_index" columns="display_order" />
+			<index name="city_updated_at_index" columns="updated_at" />
+			<index name="city_created_by_index" columns="created_by" />
+		</indexes>
+		<unique-constraints>
+			<unique-constraint name="city_url_route_unique" columns="url_route" />
+		</unique-constraints>
+		<id name="id" type="integer" column="id">
+			<options>
+				<option name="unsigned">1</option>
+			</options>
+			<generator strategy="IDENTITY" />
+		</id>
+		<field name="name" type="string" column="name" length="255" nullable="false">
+			<options>
+				<option name="fixed" />
+			</options>
+		</field>
+		<field name="urlRoute" type="string" column="url_route" length="255" nullable="true">
+			<options>
+				<option name="fixed" />
+			</options>
+		</field>
+		<field name="regionalCenter" type="boolean" column="regional_center" nullable="false">
+			<options>
+				<option name="fixed" />
+				<option name="default">0</option>
+			</options>
+		</field>
+		<field name="displayOrder" type="integer" column="display_order" nullable="false">
+			<options>
+				<option name="unsigned">1</option>
+				<option name="default">100</option>
+			</options>
+		</field>
+		<field name="seoKeywords" type="string" column="seo_keywords" length="4000" nullable="true">
+			<options>
+				<option name="fixed" />
+			</options>
+		</field>
+		<field name="seoTitle" type="string" column="seo_title" length="1000" nullable="true">
+			<options>
+				<option name="fixed" />
+			</options>
+		</field>
+		<field name="seoDescription" type="string" column="seo_description" length="4000" nullable="true">
+			<options>
+				<option name="fixed" />
+			</options>
+		</field>
+		<many-to-one field="event" target-entity="App\Model\Event" fetch="LAZY">
+			<cache usage="NONSTRICT_READ_WRITE" />
+			<cascade>
+				<cascade-persist />
+				<cascade-merge />
+				<cascade-refresh />
+			</cascade>
+			<join-columns>
+				<join-column name="event_id" referenced-column-name="id" nullable="false" />
+			</join-columns>
+		</many-to-one>
+		<many-to-one field="image" target-entity="App\Model\Image" fetch="LAZY">
+			<cache usage="NONSTRICT_READ_WRITE" />
+			<cascade>
+				<cascade-all />
+			</cascade>
+			<join-columns>
+				<join-column name="image_id" referenced-column-name="id" on-delete="SET NULL" />
+			</join-columns>
+		</many-to-one>
+		<many-to-many field="images" target-entity="App\Model\Image" fetch="LAZY">
+			<cache usage="NONSTRICT_READ_WRITE" />
+			<cascade>
+				<cascade-all />
+			</cascade>
+			<join-table name="d_city_image">
+				<join-columns>
+					<join-column name="city_id" referenced-column-name="id" on-delete="CASCADE" />
+				</join-columns>
+				<inverse-join-columns>
+					<join-column name="image_id" referenced-column-name="id" on-delete="CASCADE" />
+				</inverse-join-columns>
+			</join-table>
+			<order-by>
+				<order-by-field name="name" direction="ASC" />
+			</order-by>
+		</many-to-many>
+	</mapped-superclass>
 </doctrine-mapping>

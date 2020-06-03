@@ -16,6 +16,12 @@
 		<unique-constraints>
 			<unique-constraint name="image_url_route_unique" columns="url_route" />
 		</unique-constraints>
+		<id name="id" type="integer" column="id">
+			<options>
+				<option name="unsigned">1</option>
+			</options>
+			<generator strategy="IDENTITY" />
+		</id>
 		<field name="name" type="string" column="name" length="255" nullable="false">
 			<options>
 				<option name="fixed" />

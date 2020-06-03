@@ -7,19 +7,21 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use ItAces\SoftDeleteable;
-use ItAces\UnderAdminControl;
+use ItAces\Publishable;
 
 class User extends \ItAces\ORM\Entities\User
-implements Authenticatable, Authorizable, CanResetPassword, MustVerifyEmail, SoftDeleteable, UnderAdminControl
+implements Authenticatable, Authorizable, CanResetPassword, MustVerifyEmail, SoftDeleteable, Publishable
 {
     use \Illuminate\Auth\Passwords\CanResetPassword;
     use \Illuminate\Foundation\Auth\Access\Authorizable;
     use \ItAces\Traits\Notifiable;
     use \ItAces\Traits\MustVerifyEmail;
     use \ItAces\Traits\Authenticatable;
+    use \ItAces\Traits\UsesPasswordGrant;
+    use \Laravel\Passport\HasApiTokens;
     
     /**
-     * Fields to be excluded from the JSON response.
+     * Fields to be excluded from the response.
      *
      * @var string[]
      */
@@ -65,4 +67,11 @@ implements Authenticatable, Authorizable, CanResetPassword, MustVerifyEmail, Sof
         });
     }
 
+    /**
+     * 
+     * @return string
+     */
+    public function getName() {
+        return $this->email;
+    }
 }

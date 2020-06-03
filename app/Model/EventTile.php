@@ -3,10 +3,10 @@
 namespace App\Model;
 
 use ItAces\SoftDeleteable;
-use ItAces\UnderAdminControl;
+use ItAces\Publishable;
 
 
-class EventTile extends \App\Entities\EventTile implements SoftDeleteable, UnderAdminControl
+class EventTile extends \App\Entities\EventTile implements SoftDeleteable, Publishable
 {
     /**
      *

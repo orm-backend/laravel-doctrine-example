@@ -16,3 +16,5 @@ yarn-error.log
 .ptp-sync-folder
 /.ptp-sync
 /public/js/app.js.LICENSE.txt
+/oauth.txt
+

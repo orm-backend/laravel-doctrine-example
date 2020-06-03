@@ -110,7 +110,7 @@ class RegisterController extends Controller
         $user->setEmail($data['email']);
         $user->setPassword(Hash::make($data['password']));
         $this->em->persist($user);
-        $user->setCreatedBy($user);
+        // $user->setCreatedBy($user); We will not be able to delete users
         $this->em->flush();
 
         event(new Registered($user));

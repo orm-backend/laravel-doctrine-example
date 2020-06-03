@@ -7,6 +7,12 @@ namespace App\Entities;
  */
 abstract class Listing extends \ItAces\ORM\Entities\EntityBase
 {
+    
+    /**
+     * @var int
+     */
+    protected $id;
+    
     /**
      * @var string
      */
