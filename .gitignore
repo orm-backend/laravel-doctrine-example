@@ -13,3 +13,6 @@ yarn-error.log
 /.settings
 /.buildpath
 /.project
+.ptp-sync-folder
+/.ptp-sync
+/public/js/app.js.LICENSE.txt
