@@ -41,6 +41,10 @@ git clone git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-example.git
     },
     {
        "type": "vcs",
+       "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-oauth.git"
+    },
+    {
+       "type": "vcs",
        "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-example.git"
     }
 ]
