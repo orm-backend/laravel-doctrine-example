@@ -35,8 +35,8 @@ class EventTableSeeder extends Seeder
             $endDate = $faker->optional()->dateTimeBetween('now', '+7 days');
 
             $event = new Event;
-            $event->setName($faker->word);
-            $event->setUrlRoute($faker->unique()->word);
+            $event->setName($faker->sentence());
+            //$event->setUrlRoute($faker->unique()->word());
             $event->setStartDate(Carbon::instance($faker->dateTimeBetween('now', '+7 days')));
             $event->setEndDate($endDate ? Carbon::instance($endDate) : null);
             $event->setLocation($faker->country);

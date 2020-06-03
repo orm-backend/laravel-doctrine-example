@@ -36,7 +36,7 @@ class CityTableSeeder extends Seeder
             
             $city = new City;
             $city->setName($faker->sentence());
-            $city->setUrlRoute($faker->unique()->word);
+            //$city->setUrlRoute($faker->unique()->word());
             $city->setRegionalCenter($faker->boolean);
             $city->setSeoKeywords($faker->words(6, true));
             $city->setSeoTitle($faker->sentence);

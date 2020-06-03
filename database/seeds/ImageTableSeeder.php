@@ -33,7 +33,7 @@ class ImageTableSeeder extends Seeder
                 $data = [
                     'createdBy' => $user,
                     'name' => $image,
-                    'urlRoute' => $faker->unique()->word,
+                    //'urlRoute' => $faker->unique()->word(),
                     'altText' => $faker->sentence(),
                     'path' => config('itaces.upload.img') . '/' . $image,
                     'description' => $faker->optional()->paragraph(),
