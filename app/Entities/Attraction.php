@@ -5,7 +5,7 @@ namespace App\Entities;
 /**
  * Attraction
  */
-abstract class Attraction extends \ItAces\ORM\Entities\EntityBase
+abstract class Attraction extends \ItAces\ORM\Entities\BaseEntity
 {
     
     /**

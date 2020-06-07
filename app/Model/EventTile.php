@@ -11,7 +11,7 @@ class EventTile extends \App\Entities\EventTile implements SoftDeleteable, Publi
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\EntityBase::getModelValidationRules()
+     * @see \ItAces\ORM\Entities\Entity::getModelValidationRules()
      */
     public function getModelValidationRules()
     {
@@ -29,7 +29,7 @@ class EventTile extends \App\Entities\EventTile implements SoftDeleteable, Publi
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\EntityBase::getRequestValidationRules()
+     * @see \ItAces\ORM\Entities\Entity::getRequestValidationRules()
      */
     static public function getRequestValidationRules()
     {

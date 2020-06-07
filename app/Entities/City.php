@@ -5,7 +5,7 @@ namespace App\Entities;
 /**
  * City
  */
-abstract class City extends \ItAces\ORM\Entities\EntityBase
+abstract class City extends \ItAces\ORM\Entities\BaseEntity
 {
     
     /**

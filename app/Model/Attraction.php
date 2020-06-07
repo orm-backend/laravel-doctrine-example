@@ -11,7 +11,7 @@ class Attraction extends \App\Entities\Attraction implements SoftDeleteable, Pub
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\EntityBase::getModelValidationRules()
+     * @see \ItAces\ORM\Entities\Entity::getModelValidationRules()
      */
     public function getModelValidationRules()
     {
@@ -29,7 +29,7 @@ class Attraction extends \App\Entities\Attraction implements SoftDeleteable, Pub
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\EntityBase::getRequestValidationRules()
+     * @see \ItAces\ORM\Entities\Entity::getRequestValidationRules()
      */
     static public function getRequestValidationRules()
     {

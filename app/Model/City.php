@@ -11,7 +11,7 @@ class City extends \App\Entities\City implements SoftDeleteable, Publishable
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\EntityBase::getModelValidationRules()
+     * @see \ItAces\ORM\Entities\Entity::getModelValidationRules()
      */
     public function getModelValidationRules()
     {
@@ -31,7 +31,7 @@ class City extends \App\Entities\City implements SoftDeleteable, Publishable
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\EntityBase::getRequestValidationRules()
+     * @see \ItAces\ORM\Entities\Entity::getRequestValidationRules()
      */
     static public function getRequestValidationRules()
     {
