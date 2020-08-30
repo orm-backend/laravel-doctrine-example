@@ -5,7 +5,7 @@ namespace App\Entities;
 /**
  * EventTile
  */
-abstract class EventTile extends \ItAces\ORM\Entities\BaseEntity
+abstract class EventTile extends \VVK\ORM\Entities\BaseEntity
 {
     
     /**

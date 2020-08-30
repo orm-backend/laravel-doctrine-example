@@ -1,4 +1,4 @@
-# Example integration with Admin Panel developed by [IT Aces](https://it-aces.com/) team
+# Example integration with Admin Panel developed by [IT Aces](https://vvk.com/) team
 
 ## Dependencies
 
@@ -6,17 +6,17 @@
  * [laravel/passport](https://github.com/laravel/passport)
  * [laravel/ui](https://github.com/laravel/ui)
  * [laravel-doctrine/orm](https://github.com/laravel-doctrine/orm)
- * [it-aces/laravel-doctrine](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine/src/master/)
- * [it-aces/laravel-doctrine-acl](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-acl/src/master/)
- * [it-aces/laravel-doctrine-web](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-web/src/master/)
- * [it-aces/laravel-doctrine-admin](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-admin/src/master/)
+ * [vvk/laravel-doctrine](https://github.com/vvk-kolsky/laravel-doctrine)
+ * [vvk/laravel-doctrine-acl](https://github.com/vvk-kolsky/laravel-doctrine-acl)
+ * [vvk/laravel-doctrine-web](https://github.com/vvk-kolsky/laravel-doctrine-web)
+ * [vvk/laravel-doctrine-admin](https://github.com/vvk-kolsky/laravel-doctrine-admin)
 
 ## Install
 
  * Checkout
 
 ```BASH
-git clone git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-example.git
+git clone git@github.com:vvk-kolsky/laravel-doctrine-example.git
 ```
 
  * Add repositories to composer.json
@@ -25,27 +25,27 @@ git clone git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-example.git
 "repositories": [
 	{
        "type": "vcs",
-       "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine.git"
+       "url": "git@github.com:vvk-kolsky/laravel-doctrine.git"
     },
     {
        "type": "vcs",
-       "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-acl.git"
+       "url": "git@github.com:vvk-kolsky/laravel-doctrine-acl.git"
     },
     {
        "type": "vcs",
-       "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-web.git"
+       "url": "git@github.com:vvk-kolsky/laravel-doctrine-web.git"
     },
     {
        "type": "vcs",
-       "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-admin.git"
+       "url": "git@github.com:vvk-kolsky/laravel-doctrine-admin.git"
     },
     {
        "type": "vcs",
-       "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-oauth.git"
+       "url": "git@github.com:vvk-kolsky/laravel-doctrine-oauth.git"
     },
     {
        "type": "vcs",
-       "url": "git@bitbucket.org:vitaliy_kovalenko/laravel-doctrine-example.git"
+       "url": "git@github.com:vvk-kolsky/laravel-doctrine-example.git"
     }
 ]
 ```
@@ -88,13 +88,13 @@ Updating database schema...
 Database schema updated successfully! "53" queries were executed
 ```
 
- * Creation of roles and administrator with login _admin@it-aces.com_ and password _doctrine_
+ * Creation of roles and administrator with login _admin@vvk.com_ and password _doctrine_
 
 ```BASH
-php artisan db:seed --class="ItAces\Database\Seeds\RoleTableSeeder"
+php artisan db:seed --class="VVK\Database\Seeds\RoleTableSeeder"
 Database seeding completed successfully.
 
-php artisan db:seed --class="ItAces\Database\Seeds\UserTableSeeder"
+php artisan db:seed --class="VVK\Database\Seeds\UserTableSeeder"
 Database seeding completed successfully.
 ```
 
@@ -134,8 +134,8 @@ php artisan db:seed
 
 To create an application from scratch or add an admin panel to an existing project, you do not need this package. Please install separately:
 
- * [it-aces/laravel-doctrine](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine/src/master/)
- * [it-aces/laravel-doctrine-acl](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-acl/src/master/)
- * [it-aces/laravel-doctrine-web](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-web/src/master/)
- * [it-aces/laravel-doctrine-admin](https://bitbucket.org/vitaliy_kovalenko/laravel-doctrine-admin/src/master/)
+ * [vvk/laravel-doctrine](https://github.com/vvk-kolsky/laravel-doctrine)
+ * [vvk/laravel-doctrine-acl](https://github.com/vvk-kolsky/laravel-doctrine-acl)
+ * [vvk/laravel-doctrine-web](https://github.com/vvk-kolsky/laravel-doctrine-web)
+ * [vvk/laravel-doctrine-admin](https://github.com/vvk-kolsky/laravel-doctrine-admin)
  

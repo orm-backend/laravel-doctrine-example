@@ -3,8 +3,8 @@
 namespace App\Model;
 
 use Illuminate\Support\Facades\Storage;
-use ItAces\SoftDeleteable;
-use ItAces\Types\ImageType;
+use VVK\SoftDeleteable;
+use VVK\Types\ImageType;
 
 
 class Image extends \App\Entities\Image implements SoftDeleteable, ImageType
@@ -20,7 +20,7 @@ class Image extends \App\Entities\Image implements SoftDeleteable, ImageType
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\Entity::getModelValidationRules()
+     * @see \VVK\ORM\Entities\Entity::getModelValidationRules()
      */
     public function getModelValidationRules()
     {
@@ -37,7 +37,7 @@ class Image extends \App\Entities\Image implements SoftDeleteable, ImageType
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\Entity::getRequestValidationRules()
+     * @see \VVK\ORM\Entities\Entity::getRequestValidationRules()
      */
     static public function getRequestValidationRules()
     {

@@ -5,7 +5,7 @@ namespace App\Entities;
 /**
  * Event
  */
-abstract class Event extends \ItAces\ORM\Entities\BaseEntity
+abstract class Event extends \VVK\ORM\Entities\BaseEntity
 {
     
     /**

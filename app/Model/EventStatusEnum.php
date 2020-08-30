@@ -1,7 +1,7 @@
 <?php
 namespace App\Model;
 
-use ItAces\DBAL\Types\EnumType;
+use VVK\DBAL\Types\EnumType;
 
 /**
  * 
@@ -14,7 +14,7 @@ class EventStatusEnum extends EnumType
     /**
      * 
      * {@inheritDoc}
-     * @see \ItAces\DBAL\Types\EnumType::getTypeName()
+     * @see \VVK\DBAL\Types\EnumType::getTypeName()
      */
     public function getTypeName()
     {
@@ -24,7 +24,7 @@ class EventStatusEnum extends EnumType
     /**
      * 
      * {@inheritDoc}
-     * @see \ItAces\DBAL\Types\EnumType::getAllowedValues()
+     * @see \VVK\DBAL\Types\EnumType::getAllowedValues()
      */
     public function getAllowedValues()
     {

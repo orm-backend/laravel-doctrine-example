@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use App\Model\Event;
 use App\Model\Image;
-use ItAces\Repositories\Repository;
+use VVK\Repositories\Repository;
 use Tests\TestCase;
 
 class CityControllerTest extends TestCase

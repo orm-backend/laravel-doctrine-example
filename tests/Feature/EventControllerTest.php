@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use App\Model\Image;
 use Illuminate\Support\Str;
 use Tests\TestCase;
-use ItAces\Repositories\Repository;
+use VVK\Repositories\Repository;
 
 class EventControllerTest extends TestCase
 {

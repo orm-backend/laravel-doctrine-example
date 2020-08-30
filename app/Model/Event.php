@@ -2,8 +2,8 @@
 
 namespace App\Model;
 
-use ItAces\SoftDeleteable;
-use ItAces\Publishable;
+use VVK\SoftDeleteable;
+use VVK\Publishable;
 
 
 class Event extends \App\Entities\Event implements SoftDeleteable, Publishable
@@ -12,7 +12,7 @@ class Event extends \App\Entities\Event implements SoftDeleteable, Publishable
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\Entity::getModelValidationRules()
+     * @see \VVK\ORM\Entities\Entity::getModelValidationRules()
      */
     public function getModelValidationRules()
     {
@@ -33,7 +33,7 @@ class Event extends \App\Entities\Event implements SoftDeleteable, Publishable
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\Entity::getRequestValidationRules()
+     * @see \VVK\ORM\Entities\Entity::getRequestValidationRules()
      */
     static public function getRequestValidationRules()
     {

@@ -2,8 +2,8 @@
 
 namespace App\Model;
 
-use ItAces\SoftDeleteable;
-use ItAces\Publishable;
+use VVK\SoftDeleteable;
+use VVK\Publishable;
 
 
 class EventTile extends \App\Entities\EventTile implements SoftDeleteable, Publishable
@@ -11,7 +11,7 @@ class EventTile extends \App\Entities\EventTile implements SoftDeleteable, Publi
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\Entity::getModelValidationRules()
+     * @see \VVK\ORM\Entities\Entity::getModelValidationRules()
      */
     public function getModelValidationRules()
     {
@@ -29,7 +29,7 @@ class EventTile extends \App\Entities\EventTile implements SoftDeleteable, Publi
     /**
      *
      * {@inheritDoc}
-     * @see \ItAces\ORM\Entities\Entity::getRequestValidationRules()
+     * @see \VVK\ORM\Entities\Entity::getRequestValidationRules()
      */
     static public function getRequestValidationRules()
     {

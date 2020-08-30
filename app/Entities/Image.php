@@ -5,7 +5,7 @@ namespace App\Entities;
 /**
  * Image
  */
-abstract class Image extends \ItAces\ORM\Entities\BaseEntity
+abstract class Image extends \VVK\ORM\Entities\BaseEntity
 {
     
     /**

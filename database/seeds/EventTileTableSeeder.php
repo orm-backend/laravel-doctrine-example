@@ -5,7 +5,7 @@ use App\Model\EventTile;
 use App\Model\Image;
 use App\Model\User;
 use Illuminate\Database\Seeder;
-use ItAces\Repositories\Repository;
+use VVK\Repositories\Repository;
 
 class EventTileTableSeeder extends Seeder
 {
