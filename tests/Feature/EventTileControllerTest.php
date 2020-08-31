@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use App\Model\Event;
 use App\Model\Image;
 use Tests\TestCase;
-use VVK\Repositories\Repository;
+use OrmBackend\Repositories\Repository;
 
 class EventTileControllerTest extends TestCase
 {

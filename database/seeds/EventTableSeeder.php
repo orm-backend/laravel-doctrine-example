@@ -5,7 +5,7 @@ use App\Model\Image;
 use App\Model\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
-use VVK\Repositories\Repository;
+use OrmBackend\Repositories\Repository;
 
 class EventTableSeeder extends Seeder
 {

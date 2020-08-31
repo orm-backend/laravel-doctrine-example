@@ -176,7 +176,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         
-        VVK\ORM\DoctrineServiceProvider::class,
+        OrmBackend\ORM\DoctrineServiceProvider::class,
         LaravelDoctrine\Extensions\BeberleiExtensionsServiceProvider::class,
 
     ],

@@ -1,5 +1,5 @@
 {
-	"name" : "vvk/laravel-doctrine-example",
+	"name" : "orm-backend/laravel-doctrine-example",
 	"type" : "project",
 	"description" : "The Laravel Framework.",
 	"keywords" : [
@@ -13,11 +13,11 @@
 		"fideloper/proxy" : "^4.2",
 		"fruitcake/laravel-cors" : "^1.0",
 		"guzzlehttp/guzzle" : "^6.3",
-		"vvk/laravel-doctrine" : "dev-master",
-		"vvk/laravel-doctrine-acl" : "dev-master",
-		"vvk/laravel-doctrine-admin" : "dev-master",
-		"vvk/laravel-doctrine-oauth" : "dev-master",
-		"vvk/laravel-doctrine-web" : "dev-master",
+		"orm-backend/laravel-doctrine" : "dev-master",
+		"orm-backend/laravel-doctrine-acl" : "dev-master",
+		"orm-backend/laravel-doctrine-admin" : "dev-master",
+		"orm-backend/laravel-doctrine-oauth" : "dev-master",
+		"orm-backend/laravel-doctrine-web" : "dev-master",
 		"laravel/framework" : "^7.0",
 		"laravel/tinker" : "^2.0",
 		"laravel/ui" : "^2.0"
@@ -35,7 +35,6 @@
 		"preferred-install" : "dist",
 		"sort-packages" : true
 	},
-	"extra" : {},
 	"autoload" : {
 		"psr-4" : {
 			"App\\" : "app/"

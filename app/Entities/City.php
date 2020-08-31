@@ -5,7 +5,7 @@ namespace App\Entities;
 /**
  * City
  */
-abstract class City extends \VVK\ORM\Entities\BaseEntity
+abstract class City extends \OrmBackend\ORM\Entities\BaseEntity
 {
     
     /**

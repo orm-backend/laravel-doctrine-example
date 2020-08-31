@@ -2,8 +2,8 @@
 
 namespace App\Model;
 
-use VVK\SoftDeleteable;
-use VVK\Publishable;
+use OrmBackend\SoftDeleteable;
+use OrmBackend\Publishable;
 
 
 class City extends \App\Entities\City implements SoftDeleteable, Publishable
@@ -11,7 +11,7 @@ class City extends \App\Entities\City implements SoftDeleteable, Publishable
     /**
      *
      * {@inheritDoc}
-     * @see \VVK\ORM\Entities\Entity::getModelValidationRules()
+     * @see \OrmBackend\ORM\Entities\Entity::getModelValidationRules()
      */
     public function getModelValidationRules()
     {
@@ -31,7 +31,7 @@ class City extends \App\Entities\City implements SoftDeleteable, Publishable
     /**
      *
      * {@inheritDoc}
-     * @see \VVK\ORM\Entities\Entity::getRequestValidationRules()
+     * @see \OrmBackend\ORM\Entities\Entity::getRequestValidationRules()
      */
     static public function getRequestValidationRules()
     {

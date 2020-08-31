@@ -5,9 +5,9 @@ namespace App\Providers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use VVK\Web\Events\BeforMenu;
-use VVK\Admin\AdminMenuListener;
-use VVK\Oauth\OauthMenuListener;
+use OrmBackend\Web\Events\BeforMenu;
+use OrmBackend\Admin\AdminMenuListener;
+use OrmBackend\Oauth\OauthMenuListener;
 
 class EventServiceProvider extends ServiceProvider
 {

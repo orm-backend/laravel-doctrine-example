@@ -2,8 +2,8 @@
 
 namespace App\Model;
 
-use VVK\SoftDeleteable;
-use VVK\Publishable;
+use OrmBackend\SoftDeleteable;
+use OrmBackend\Publishable;
 
 
 class Listing extends \App\Entities\Listing implements SoftDeleteable, Publishable
@@ -11,7 +11,7 @@ class Listing extends \App\Entities\Listing implements SoftDeleteable, Publishab
     /**
      *
      * {@inheritDoc}
-     * @see \VVK\ORM\Entities\Entity::getModelValidationRules()
+     * @see \OrmBackend\ORM\Entities\Entity::getModelValidationRules()
      */
     public function getModelValidationRules()
     {
@@ -25,7 +25,7 @@ class Listing extends \App\Entities\Listing implements SoftDeleteable, Publishab
     /**
      *
      * {@inheritDoc}
-     * @see \VVK\ORM\Entities\Entity::getRequestValidationRules()
+     * @see \OrmBackend\ORM\Entities\Entity::getRequestValidationRules()
      */
     static public function getRequestValidationRules()
     {

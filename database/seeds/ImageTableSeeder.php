@@ -3,7 +3,7 @@
 use App\Model\Image;
 use App\Model\User;
 use Illuminate\Database\Seeder;
-use VVK\Repositories\Repository;
+use OrmBackend\Repositories\Repository;
 
 class ImageTableSeeder extends Seeder
 {

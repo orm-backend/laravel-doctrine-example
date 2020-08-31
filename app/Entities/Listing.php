@@ -5,7 +5,7 @@ namespace App\Entities;
 /**
  * Listing
  */
-abstract class Listing extends \VVK\ORM\Entities\BaseEntity
+abstract class Listing extends \OrmBackend\ORM\Entities\BaseEntity
 {
     
     /**
