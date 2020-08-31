@@ -6,10 +6,10 @@
  * [laravel/passport](https://github.com/laravel/passport)
  * [laravel/ui](https://github.com/laravel/ui)
  * [laravel-doctrine/orm](https://github.com/laravel-doctrine/orm)
- * [vvk/laravel-doctrine](https://github.com/orm-backend/laravel-doctrine)
- * [vvk/laravel-doctrine-acl](https://github.com/orm-backend/laravel-doctrine-acl)
- * [vvk/laravel-doctrine-web](https://github.com/orm-backend/laravel-doctrine-web)
- * [vvk/laravel-doctrine-admin](https://github.com/orm-backend/laravel-doctrine-admin)
+ * [orm-backend/laravel-doctrine](https://github.com/orm-backend/laravel-doctrine)
+ * [orm-backend/laravel-doctrine-acl](https://github.com/orm-backend/laravel-doctrine-acl)
+ * [orm-backend/laravel-doctrine-web](https://github.com/orm-backend/laravel-doctrine-web)
+ * [orm-backend/laravel-doctrine-admin](https://github.com/orm-backend/laravel-doctrine-admin)
 
 ## Install
 
@@ -134,8 +134,8 @@ php artisan db:seed
 
 To create an application from scratch or add an admin panel to an existing project, you do not need this package. Please install separately:
 
- * [vvk/laravel-doctrine](https://github.com/orm-backend/laravel-doctrine)
- * [vvk/laravel-doctrine-acl](https://github.com/orm-backend/laravel-doctrine-acl)
- * [vvk/laravel-doctrine-web](https://github.com/orm-backend/laravel-doctrine-web)
- * [vvk/laravel-doctrine-admin](https://github.com/orm-backend/laravel-doctrine-admin)
+ * [orm-backend/laravel-doctrine](https://github.com/orm-backend/laravel-doctrine)
+ * [orm-backend/laravel-doctrine-acl](https://github.com/orm-backend/laravel-doctrine-acl)
+ * [orm-backend/laravel-doctrine-web](https://github.com/orm-backend/laravel-doctrine-web)
+ * [orm-backend/laravel-doctrine-admin](https://github.com/orm-backend/laravel-doctrine-admin)
  
