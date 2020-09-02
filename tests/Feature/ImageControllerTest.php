@@ -43,7 +43,7 @@ class ImageControllerTest extends TestCase
         
         $response = $this->json('POST', '/api/entities/app-model-image/create', $data);
         $response->assertStatus(201);
-        Storage::disk()->assertExists(config('itaces.upload.img') . '/' . $file->hashName());
+        Storage::disk()->assertExists(config('ormbackend.upload.img') . '/' . $file->hashName());
         
         return $response->json('id');
     }

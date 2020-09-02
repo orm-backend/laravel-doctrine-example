@@ -27,7 +27,7 @@ class ImageTableSeeder extends Seeder
         $rootPath = config("filesystems.disks.{$disk}.root");
         
         for ($i = 0; $i < 100; $i++) {
-            $image = $faker->image($rootPath . '/' . config('itaces.upload.img'), 640, 480, null, false);
+            $image = $faker->image($rootPath . '/' . config('ormbackend.upload.img'), 640, 480, null, false);
 
             if ($image) {
                 $data = [
@@ -35,7 +35,7 @@ class ImageTableSeeder extends Seeder
                     'name' => $image,
                     //'urlRoute' => $faker->unique()->word(),
                     'altText' => $faker->sentence(),
-                    'path' => config('itaces.upload.img') . '/' . $image,
+                    'path' => config('ormbackend.upload.img') . '/' . $image,
                     'description' => $faker->optional()->paragraph(),
                     'photoCredit' => $faker->optional()->text
                 ];
