@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Example of Admin Panel integration
+=======
+# Example integration with Admin Panel
+>>>>>>> branch 'master' of git@github.com:orm-backend/laravel-doctrine-example.git
 
 ## Dependencies
 
