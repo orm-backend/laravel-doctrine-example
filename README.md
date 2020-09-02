@@ -1,4 +1,4 @@
-# Example integration with Admin Panel developed by [IT Aces](https://vvk.com/) team
+# Example of Admin Panel integration
 
 ## Dependencies
 
@@ -88,7 +88,7 @@ Updating database schema...
 Database schema updated successfully! "53" queries were executed
 ```
 
- * Creation of roles and administrator with login _admin@vvk.com_ and password _doctrine_
+ * Creation of roles and administrator with login _admin@orm-backend_ and password _doctrine_
 
 ```BASH
 php artisan db:seed --class="OrmBackend\Database\Seeds\RoleTableSeeder"
