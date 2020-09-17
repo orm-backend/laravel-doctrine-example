@@ -21,7 +21,7 @@ return [
             'edit' => 'ormbackend::admin.role.edit',
             'create' => 'ormbackend::admin.role.create'
         ],
-        'it_aces-oauth-entities-client' => [
+        'orm_backend-oauth-entities-client' => [
             'create' => 'oauth::client.create'
         ],
     ]
